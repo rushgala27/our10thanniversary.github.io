@@ -1,0 +1,149 @@
+/* ======= Base Styling ======= */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======= Quiz Container ======= */
+.quiz-container {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ======= Title ======= */
+h1 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite alternate;
+}
+
+/* ======= Question Section ======= */
+.question {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #fefefe;
+  font-weight: 500;
+}
+
+/* ======= Options Styling ======= */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.option {
+  flex: 0 48%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* ======= Correct / Incorrect Animations ======= */
+.correct {
+  background: #00c896 !important;
+  color: #fff;
+  animation: pulse 0.5s ease;
+}
+
+.incorrect {
+  background: #ff5b5b !important;
+  color: #fff;
+  animation: shake 0.4s ease;
+}
+
+#score {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* ======= Restart Button ======= */
+#restart {
+  margin-top: 25px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#restart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(56, 249, 215, 0.5);
+}
+
+/* ======= Animations ======= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #fbc2eb;
+  }
+  100% {
+    text-shadow: 0 0 20px #a6c1ee;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
